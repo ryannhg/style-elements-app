@@ -109,7 +109,7 @@ stylesheet =
             , hover
                 [ Color.text jet
                 , Color.border jet
-                , translate 0 -2 0
+                , translate 0 -1 0
                 , Shadow.box
                     { offset = ( 0, 1 )
                     , size = 1
@@ -150,7 +150,7 @@ view model =
 navbar : El
 navbar =
     row None
-        [ padding 16, width (percent 100), verticalCenter ]
+        [ padding 16, width fill, verticalCenter ]
         [ link "/" <|
             el Brand [] (text "Jangle")
         , row None
@@ -159,6 +159,7 @@ navbar =
                 el Link [] (text "Guide")
             , link "#docs" <|
                 el Link [] (text "Docs")
-            , button Button [ paddingXY 24 10 ] (text "View on Github")
+            , newTab "https://github.com/jangle-cms" <|
+                el Button [ paddingXY 20 10 ] (text "View on Github")
             ]
         ]
